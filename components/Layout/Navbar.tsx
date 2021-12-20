@@ -11,14 +11,14 @@ const Navbar = () => {
 	const router = useRouter();
 
 	return (
-		<nav className="flex justify-center mt-16">
+		<nav className="absolute w-full flex justify-center mt-16">
 			<ul className="flex">
 				{routes.map((route) => (
 					<li key={route.name}>
 						<Link href={route.path}>
 							<a
 								className={`text-2xl p-8 font-storytime ${
-									router.pathname === route.path ? "text-red-400" : "text-zinc-200 hover:text-zinc-50"
+									router.pathname === route.path ? "text-red-500" : "text-zinc-200 hover:text-zinc-50"
 								} transition-colors`}
 							>
 								{route.name}

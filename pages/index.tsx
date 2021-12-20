@@ -1,8 +1,12 @@
-import type { NextPage } from "next";
-import Head from "next/head";
+import Intro from "../components/Intro";
 
-const Home: NextPage = () => {
-	return <div>Home</div>;
+const Home = () => {
+	return (
+		<>
+			<Intro />
+			<section className="h-screen"></section>
+		</>
+	);
 };
 
 export default Home;

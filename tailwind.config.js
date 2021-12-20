@@ -5,6 +5,7 @@ module.exports = {
 			fontFamily: {
 				beauty: ["Beauty", "sans-serif"],
 				storytime: ["Storytime", "sans-serif"],
+				roboto: ["Roboto", "sans-serif"],
 			},
 		},
 	},

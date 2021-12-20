@@ -5,7 +5,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
 	return (
 		<>
 			<Navbar />
-			{children}
+			<main>{children}</main>
 			<Footer />
 		</>
 	);
