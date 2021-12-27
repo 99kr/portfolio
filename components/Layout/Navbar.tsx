@@ -11,7 +11,7 @@ const Navbar = () => {
 	const router = useRouter();
 
 	return (
-		<nav className="absolute w-full flex justify-center mt-16">
+		<nav className="fixed flex justify-center items-center w-full p-12 bg-zinc-900">
 			<ul className="flex">
 				{routes.map((route) => (
 					<li key={route.name}>

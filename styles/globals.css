@@ -12,6 +12,7 @@ body {
 	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans",
 		"Helvetica Neue", sans-serif;
 	color: #fff;
+	overflow-x: hidden;
 }
 
 @font-face {
@@ -26,4 +27,19 @@ body {
 	src: url("/fonts/Storytime.ttf");
 	font-style: normal;
 	font-weight: 400;
+}
+
+@layer components {
+	path[class*="blob"] {
+		@apply fill-zinc-800/50;
+	}
+
+	svg[class*="underline"] {
+		stroke-linecap: round;
+		@apply absolute bottom-[0.4rem] -left-2 -z-10 stroke-zinc-800 stroke-[5];
+	}
+
+	section {
+		@apply h-screen flex justify-center items-center;
+	}
 }

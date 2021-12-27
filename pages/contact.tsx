@@ -6,7 +6,7 @@ const Contact = () => {
 			<Head>
 				<title>99kr - Contact</title>
 			</Head>
-			<h1>Contact</h1>
+			<section>sup</section>
 		</div>
 	);
 };

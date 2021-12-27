@@ -6,7 +6,7 @@ const Work = () => {
 			<Head>
 				<title>99kr - Work</title>
 			</Head>
-			<h1>Work</h1>
+			<section>sup</section>
 		</div>
 	);
 };
