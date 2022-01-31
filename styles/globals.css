@@ -6,37 +6,13 @@
 	color-scheme: dark;
 }
 
-body {
-	font-size: 16px;
-	box-sizing: border-box;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans",
-		"Helvetica Neue", sans-serif;
-	color: #fff;
-	overflow-x: hidden;
-}
-
-@font-face {
-	font-family: Beauty;
-	src: url("/fonts/Beauty.ttf");
-	font-style: normal;
-	font-weight: 400;
-}
-
-@font-face {
-	font-family: Storytime;
-	src: url("/fonts/Storytime.ttf");
-	font-style: normal;
-	font-weight: 400;
-}
-
-@layer components {
-	path[class*="blob"] {
-		@apply fill-zinc-800/50;
+@layer base {
+	html {
+		@apply scroll-smooth;
 	}
 
-	svg[class*="underline"] {
-		stroke-linecap: round;
-		@apply absolute bottom-[0.4rem] -left-2 -z-10 stroke-zinc-800 stroke-[5];
+	body {
+		@apply text-base box-border font-outfit text-white overflow-x-hidden;
 	}
 
 	section {

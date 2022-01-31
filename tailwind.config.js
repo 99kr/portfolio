@@ -3,9 +3,8 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				beauty: ["Beauty", "sans-serif"],
-				storytime: ["Storytime", "sans-serif"],
 				roboto: ["Roboto", "sans-serif"],
+				outfit: ["Outfit", "sans-serif"],
 			},
 		},
 	},
