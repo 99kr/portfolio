@@ -18,13 +18,13 @@ const Category = ({ name, items }: ICategory) => {
 			<h1 className="text-2xl text-accent-light mb-1 font-medium">{name}</h1>
 			<ul>
 				{items.map((item) => (
-					<li className="text-lg text-accent-light/80 mb-1">
+					<li className="text-lg text-accent-light/80 mb-1" key={item.name}>
 						<span className="mr-1 gradient-text">◈</span> {item.name}{" "}
 						{item.date && <DateElem date={item.date} />}
 						{item.items && (
 							<ul>
 								{item.items.map((subItem) => (
-									<li className="ml-12">
+									<li className="ml-12" key={subItem.name}>
 										<span className="mr-1 gradient-text">◇</span> {subItem.name}{" "}
 										{subItem.date && <DateElem date={subItem.date} />}
 									</li>

@@ -62,7 +62,7 @@ const Skills = () => {
 		<Section name="skills">
 			<div className="flex flex-wrap gap-24">
 				{skills.map((category) => (
-					<Category {...category} />
+					<Category {...category} key={category.name} />
 				))}
 			</div>
 		</Section>

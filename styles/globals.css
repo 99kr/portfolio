@@ -57,22 +57,20 @@
 
 @layer utilities {
 	/* https://github.com/tailwindlabs/tailwindcss/issues/162#issuecomment-755902224 */
-	@variants responsive {
-		.text-shadow {
-			text-shadow: 2px 2px 4px black;
-		}
-		.text-shadow-md {
-			text-shadow: 4px 4px 8px black;
-		}
-		.text-shadow-lg {
-			text-shadow: 15px 15px 30px black;
-		}
-		.text-shadow-none {
-			text-shadow: none;
-		}
+	.text-shadow {
+		text-shadow: 2px 2px 4px black;
+	}
+	.text-shadow-md {
+		text-shadow: 4px 4px 8px black;
+	}
+	.text-shadow-lg {
+		text-shadow: 15px 15px 30px black;
+	}
+	.text-shadow-none {
+		text-shadow: none;
+	}
 
-		.text-shadow-sm {
-			text-shadow: 0px 0px 4px rgb(0 0 0 / 0.25);
-		}
+	.text-shadow-sm {
+		text-shadow: 0px 0px 4px rgb(0 0 0 / 0.25);
 	}
 }
