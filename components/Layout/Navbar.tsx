@@ -1,28 +1,59 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 const routes = [
-	{ name: "home", path: "/#home" },
-	{ name: "about", path: "/#about" },
-	{ name: "skills", path: "/#skills" },
+	{ name: "Home", path: "/#home" },
+	{ name: "About", path: "/#about" },
+	{ name: "Skills", path: "/#skills" },
+	{ name: "Work", path: "/#work" },
 ];
 
+const MIN_SCROLL = 72;
+
 const Navbar = () => {
-	return (
-		<nav className="fixed flex justify-center items-center w-full p-12 bg-zinc-900">
-			<ul className="flex">
-				{routes.map((route) => (
-					<li key={route.name}>
-						<Link href={route.path}>
-							<a className={`text-2xl p-8 text-zinc-200 hover:text-zinc-50 transition-colors`}>
-								{route.name}
-							</a>
-						</Link>
-					</li>
-				))}
-			</ul>
-		</nav>
+	const [scrolled, setScrolled] = useState(false);
+	const scrollRef = useRef(scrolled);
+
+	useEffect(() => {
+		document.addEventListener("scroll", handleScroll);
+
+		return () => document.removeEventListener("scroll", handleScroll);
+	}, []);
+
+	const handleScroll = (e: Event) => {
+		const hasScrolled = window.scrollY > MIN_SCROLL;
+
+		if (hasScrolled === scrollRef.current) return;
+
+		scrollRef.current = hasScrolled;
+		setScrolled(hasScrolled);
+	};
+
+	return useMemo(
+		() => (
+			<header className="fixed w-full flex justify-center md:pt-12 pt-0 z-20">
+				<nav
+					className={`justify-center items-center w-full md:w-auto p-3 px-12 rounded-lg transition-all duration-300 ${
+						scrolled ? "bg-black/10 backdrop-blur-md hover:bg-black/20" : ""
+					}`}
+				>
+					<ul className="flex justify-center">
+						{routes.map((route) => (
+							<li key={route.name}>
+								<Link href={route.path}>
+									<a
+										className={`text-lg p-6 text-white text-opacity-60 hover:text-opacity-100 transition-colors text-shadow-sm`}
+									>
+										{route.name}
+									</a>
+								</Link>
+							</li>
+						))}
+					</ul>
+				</nav>
+			</header>
+		),
+		[scrolled]
 	);
 };
 

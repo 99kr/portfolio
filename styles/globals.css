@@ -12,10 +12,67 @@
 	}
 
 	body {
-		@apply text-base box-border font-outfit text-white overflow-x-hidden;
+		@apply text-base box-border text-white overflow-x-hidden;
 	}
 
-	section {
-		@apply h-screen flex justify-center items-center;
+	/* width */
+	::-webkit-scrollbar {
+		@apply w-2;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+		@apply bg-transparent;
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		@apply bg-accent-light/75 rounded-full;
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		@apply bg-accent-light;
+	}
+}
+
+@layer components {
+	.gradient-text {
+		@apply bg-gradient-to-t from-accent-dark to-accent bg-clip-text text-transparent;
+	}
+
+	.text-outline {
+		color: transparent;
+		-webkit-text-stroke-width: 1px;
+		-webkit-text-stroke-color: rgb(255 255 255 / 10%);
+		writing-mode: vertical-lr;
+
+		@apply font-body font-black text-7xl tracking-[0.75em] pt-[0.75em] rotate-180 pointer-events-none select-none;
+	}
+
+	.body-text {
+		@apply font-body text-white/75;
+	}
+}
+
+@layer utilities {
+	/* https://github.com/tailwindlabs/tailwindcss/issues/162#issuecomment-755902224 */
+	@variants responsive {
+		.text-shadow {
+			text-shadow: 2px 2px 4px black;
+		}
+		.text-shadow-md {
+			text-shadow: 4px 4px 8px black;
+		}
+		.text-shadow-lg {
+			text-shadow: 15px 15px 30px black;
+		}
+		.text-shadow-none {
+			text-shadow: none;
+		}
+
+		.text-shadow-sm {
+			text-shadow: 0px 0px 4px rgb(0 0 0 / 0.25);
+		}
 	}
 }
