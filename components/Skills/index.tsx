@@ -1,7 +1,9 @@
 import Section from "@components/Section";
-import Category from "./Category";
+import Fade from "react-reveal/Fade";
+import Slide from "react-reveal/Slide";
+import CategoryItem from "./CategoryItem";
 
-interface Item {
+export interface Item {
 	name: string;
 	date?: Date;
 	items?: Item[];
@@ -18,7 +20,11 @@ const skills: ICategory[] = [
 		items: [
 			{ name: "Lua", date: new Date(2018, 6) },
 			{ name: "HTML / CSS", date: new Date(2019, 1) },
-			{ name: "JavaScript", date: new Date(2019, 1), items: [{ name: "TypeScript", date: new Date(2019, 12) }] },
+			{
+				name: "JavaScript",
+				date: new Date(2019, 1),
+				items: [{ name: "TypeScript", date: new Date(2019, 12) }],
+			},
 			{ name: "SQL" },
 		],
 	},
@@ -62,7 +68,18 @@ const Skills = () => {
 		<Section name="skills">
 			<div className="flex flex-wrap gap-24">
 				{skills.map((category) => (
-					<Category {...category} key={category.name} />
+					<div>
+						<h1 className="text-2xl text-accent-light mb-1 font-medium">
+							{category.name}
+						</h1>
+						<ul>
+							{category.items.map((item, index) => (
+								<Fade delay={1250 + index * 150}>
+									<CategoryItem {...item} />
+								</Fade>
+							))}
+						</ul>
+					</div>
 				))}
 			</div>
 		</Section>
