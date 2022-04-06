@@ -68,13 +68,13 @@ const Skills = () => {
 		<Section name="skills">
 			<div className="flex flex-wrap gap-24">
 				{skills.map((category) => (
-					<div>
+					<div key={category.name}>
 						<h1 className="text-2xl text-accent-light mb-1 font-medium">
 							{category.name}
 						</h1>
 						<ul>
 							{category.items.map((item, index) => (
-								<Fade delay={1250 + index * 150}>
+								<Fade delay={1250 + index * 150} key={item.name}>
 									<CategoryItem {...item} />
 								</Fade>
 							))}
